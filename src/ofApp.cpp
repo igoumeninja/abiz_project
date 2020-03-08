@@ -86,8 +86,6 @@ void ofApp::setup() {
     bounceXend = ofGetScreenWidth();
     bounceYend = ofGetScreenHeight();}
   void ofApp::update() {
-  //- cout
-    //cout << xSketch << endl;
   //- Sketch
     if (sketchView) {
       for (int i = 100; i < 200; i++) {

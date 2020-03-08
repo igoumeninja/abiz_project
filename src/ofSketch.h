@@ -9,34 +9,19 @@
 
 #pragma once
 
-#include "ofxOsc.h"
-//#include "ofxVectorMath.h"
-
-#define stoixeia		100
-#define stoixeiaMouse		100		// power to the people: 400 loop working fine
-#define MAX_N_PTS		100
-
-#define HOST				"localhost"
-#define PORT				57120
+#define stoixeia 100
+#define stoixeiaMouse 100
 
 class ofSketch {
-public:	
-  int				sketchID;
+ public:
+  int sketchID;
+  float xi[stoixeia], yi[stoixeia];
+  float epitaxinsiX[stoixeia], epitaxinsiY[stoixeia];
+  float elastikotita[stoixeia], aposbesi[stoixeia];
+  float deltaX[stoixeia], deltaY[stoixeia];
   
-  float			xi[stoixeia];
-  float			yi[stoixeia];
-  float			epitaxinsiX[stoixeia];
-  float			epitaxinsiY[stoixeia];
-  float			elastikotita[stoixeia];
-  float			aposbesi[stoixeia];
-  float			deltaX[stoixeia];
-  float			deltaY[stoixeia];
-  
-  float			xiMouse[stoixeiaMouse];
-  float			yiMouse[stoixeiaMouse];
-  float			ziMouse[stoixeiaMouse];
-  float			epitaxinsiXMouse[stoixeiaMouse];
-  float			epitaxinsiYMouse[stoixeiaMouse];
+  float xiMouse[stoixeiaMouse], yiMouse[stoixeiaMouse], ziMouse[stoixeiaMouse];
+  float epitaxinsiXMouse[stoixeiaMouse], epitaxinsiYMouse[stoixeiaMouse];
   float			epitaxinsiZMouse[stoixeiaMouse];
   float			elastikotitaMouse[stoixeiaMouse];
   float			aposbesiMouse[stoixeiaMouse];	
