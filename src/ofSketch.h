@@ -2,32 +2,19 @@
 #pragma once
 
 #define stoixeia 100
-#define stoixeiaMouse 100
 
 class ofSketch {
  public:
   int sketchID;
-  float xi[stoixeia], yi[stoixeia];
-  float epitaxinsiX[stoixeia], epitaxinsiY[stoixeia];
+  float xi[stoixeia], yi[stoixeia], zi[stoixeia];
+  float epitaxinsiX[stoixeia], epitaxinsiY[stoixeia], epitaxinsiZ[stoixeia];
   float elastikotita[stoixeia], aposbesi[stoixeia];
-  float deltaX[stoixeia], deltaY[stoixeia];
-  float xiMouse[stoixeiaMouse], yiMouse[stoixeiaMouse], ziMouse[stoixeiaMouse];
-  float epitaxinsiXMouse[stoixeiaMouse], epitaxinsiYMouse[stoixeiaMouse],
-    epitaxinsiZMouse[stoixeiaMouse];
-  float elastikotitaMouse[stoixeiaMouse], aposbesiMouse[stoixeiaMouse];
-  float deltaXMouse[stoixeiaMouse], deltaYMouse[stoixeiaMouse],
-    deltaZMouse[stoixeiaMouse];
+  float deltaX[stoixeia], deltaY[stoixeia], deltaZ[stoixeia];
 
   float elast, aposv;
-  int xL, yL, zL;
-  float value, xC, yC;
-  int redL, greenL, blueL, alphaL;
-  float delta;
-  float xp, yp;
-  float on_off, lines, slines;
 
   ofVec3f my3d;
-  void init(int sketchID, float elast, float aposv);
+  void init(float elast, float aposv);
   void draw(int x, int y, int z, int r, int g, int b, int a, float lines);
 };
 

@@ -89,7 +89,7 @@ void ofApp::setup() {
   //- Sketch
     if (sketchView) {
       for (int i = 100; i < 200; i++) {
-        sketch[i].init(1, ofRandom(elasticityMin, elasticityMax),
+        sketch[i].init(ofRandom(elasticityMin, elasticityMax),
                        ofRandom(dampingMin, dampingMax));
       }
     }
