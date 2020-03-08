@@ -1,31 +1,16 @@
-/*
- *  Sketch.cpp
- *  sketch091221
- *
- *  Created by Aris Bezas on 091223
- *  Copyright 2009 igoumeninja. All rights reserved.
- *
- */
- 
+// Copyright 2019 Aris Bezas
 #include "ofApp.h"
 #include "ofSketch.h"
-//----------------------------------------------------------------------------------------------------//
 
-// Initialize the Sketch Lines Characteristics
 void ofSketch::init(int sketchID, float elast, float aposv) {
-	
-	if	(sketchID == 0)	{
-		for (int i=0; i<stoixeia; i++){
-			elastikotita[i] = (elast)*(.07*(i+1));// 0.05  kai 0.005
-			aposbesi[i] = aposv-(0.02 *i);
-		}
-	}
-	if	(sketchID == 1)	{
-		for (int i=0; i<stoixeiaMouse; i++){
-			elastikotitaMouse[i] = (elast)*(.05*(i+1));// 0.05  kai 0.005
-			aposbesiMouse[i] = aposv-(0.02 *i);
-		}
-	}
+  for (int i=0; i<stoixeia; i++){
+    elastikotita[i] = (elast)*(.07*(i+1));// 0.05  kai 0.005
+    aposbesi[i] = aposv-(0.02 *i);
+  }
+  for (int i=0; i<stoixeiaMouse; i++){
+    elastikotitaMouse[i] = (elast)*(.05*(i+1));// 0.05  kai 0.005
+    aposbesiMouse[i] = aposv-(0.02 *i);
+  }
 }
 
 void ofSketch::drawMouse3D(int xL, int yL, int zL, int redL, int greenL, int blueL, int alphaL, float lines) {
