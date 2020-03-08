@@ -106,7 +106,7 @@ void ofApp::draw() {
       for (int i=100; i < 200; i++) {
         //sketch[i].drawMouse3D(xSketch, ySketch, zSketch,
         //                      rSketch, gSketch, bSketch, aSketch, 1);
-        sketch[i].drawMouse3D( xSketch, ySketch, zSketch, 255,255,255,255,1);
+        sketch[i].draw( xSketch, ySketch, zSketch, 255,255,255,255,1);
       }
     }
   //- Particles

@@ -28,9 +28,7 @@ class ofSketch {
 
   ofVec3f my3d;
   void init(int sketchID, float elast, float aposv);
-  void drawMouse3D(int xL, int yL, int zL, int redL, int greenL, int blueL, int alphaL, float lines);
-private:
-	ofxOscSender	sender;
+  void draw(int x, int y, int z, int r, int g, int b, int a, float lines);
 };
 
 
