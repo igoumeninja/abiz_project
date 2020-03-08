@@ -1,7 +1,7 @@
 // Copyright 2019 Aris Bezas
 #pragma once
 
-#define stoixeia 100
+#define stoixeia 200
 
 class ofSketch {
  public:
@@ -15,7 +15,7 @@ class ofSketch {
 
   ofVec3f my3d;
   void init(float elast, float aposv);
-  void draw(int x, int y, int z, int r, int g, int b, int a, float lines);
+  void draw(int x, int y, int z, int r, int g, int b, int a);
 };
 
 

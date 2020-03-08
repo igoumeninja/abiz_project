@@ -9,8 +9,7 @@ void ofSketch::init(float elast, float aposv) {
   }
 }
 
-void ofSketch::draw(int x, int y, int z,
-                    int r, int g, int b, int a, float lines) {
+void ofSketch::draw(int x, int y, int z, int r, int g, int b, int a) {
   ofNoFill();
   ofSetColor(r, g, b, a);
   glEnable(GL_BLEND);
@@ -18,30 +17,24 @@ void ofSketch::draw(int x, int y, int z,
   glEnable(GL_LINE_SMOOTH);
   glBegin(GL_POINTS);
   for (int i = 0; i < stoixeia; i++) {
-    if (a != 0) {
-      if (i == 0) {
-        deltaX[i] = (x - xi[i]);
-        deltaY[i] = (y - yi[i]);
-        deltaZ[i] = (z - zi[i]);
-      } else {
-        deltaX[i] = (xi[i-1]-xi[i]);
-        deltaY[i] = (yi[i-1]-yi[i]);
-        deltaZ[i] = (zi[i-1]-zi[i]);
-      }
-      deltaX[i] *= elastikotita[i];
-      deltaY[i] *= elastikotita[i];
-      deltaZ[i] *= elastikotita[i];
-      epitaxinsiX[i] += deltaX[i];
-      epitaxinsiY[i] += deltaY[i];
-      epitaxinsiZ[i] += deltaZ[i];
-      xi[i] += epitaxinsiX[i];
-      yi[i] += epitaxinsiY[i];
-      zi[i] += epitaxinsiZ[i];
+    if (i == 0) {
+      deltaX[i] = (x - xi[i]);
+      deltaY[i] = (y - yi[i]);
+      deltaZ[i] = (z - zi[i]);
     } else {
-      xi[i] = x;
-      yi[i] = y;
-      zi[i] = y;
+      deltaX[i] = (xi[i-1]-xi[i]);
+      deltaY[i] = (yi[i-1]-yi[i]);
+      deltaZ[i] = (zi[i-1]-zi[i]);
     }
+    deltaX[i] *= elastikotita[i];
+    deltaY[i] *= elastikotita[i];
+    deltaZ[i] *= elastikotita[i];
+    epitaxinsiX[i] += deltaX[i];
+    epitaxinsiY[i] += deltaY[i];
+    epitaxinsiZ[i] += deltaZ[i];
+    xi[i] += epitaxinsiX[i];
+    yi[i] += epitaxinsiY[i];
+    zi[i] += epitaxinsiZ[i];
     my3d.x = xi[i];
     my3d.y = yi[i];
     my3d.z = z;

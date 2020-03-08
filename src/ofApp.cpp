@@ -42,22 +42,21 @@ void ofApp::setup() {
     
     ofxSubscribeOsc(9005, "/bg_color", bg_color);
   //- Start Values
-    rDotColor = gDotColor = bDotColor = aDotColor = 255;
+
+    fillBackground = true;
+    sketchView = false;
+    particleView = false;
+    bg_color = ofColor(0, 0, 0, 40);
+    ofBackground(255);
+  //- Sketch
     rSketch = gSketch = bSketch = aSketch = 255;
     xSketch = ySketch = zSketch = 100;
     xSketchMin = 0; xSketchMax = 1;
     ySketchMin = 40; ySketchMax = 800;
-    fillBackground = true;
-    sketchView = true;
-    particleView = false;
-    sketchColor = ofColor(255, 255, 255, 255);
-    bg_color = ofColor(0, 0, 0, 40);
-    ofBackground(255);
-  //- Sketch
   //- Particles
     int binPower = 4;
 
-    particleSystem.setup(ofGetWidth(), ofGetHeight(), binPower);
+    particleSystem.setup(ofGetScreenWidth(), ofGetScreenHeight(), binPower);
     kParticles = 2;  // change that to 5 for MacBook Pro
     float padding = 0;
     float maxVelocity = .95;
@@ -69,8 +68,8 @@ void ofApp::setup() {
       Particle particle(x, y, xv, yv);
       particleSystem.add(particle);
     }
+    rDotColor = gDotColor = bDotColor = aDotColor = 255;
     rConColor = gConColor = bConColor = 255;
-    rDotColor = gDotColor = bDotColor = 255;
     timeStep = 1;
     lineOpacity = 1;
     pointOpacity = 255;
@@ -88,7 +87,7 @@ void ofApp::setup() {
   void ofApp::update() {
   //- Sketch
     if (sketchView) {
-      for (int i = 100; i < 200; i++) {
+      for (int i = 0; i < 200; i++) {
         sketch[i].init(ofRandom(elasticityMin, elasticityMax),
                        ofRandom(dampingMin, dampingMax));
       }
@@ -103,10 +102,8 @@ void ofApp::draw() {
   //- Sketch
     if (sketchView) {
       ofSetColor(sketchColor);
-      for (int i=100; i < 200; i++) {
-        //sketch[i].drawMouse3D(xSketch, ySketch, zSketch,
-        //                      rSketch, gSketch, bSketch, aSketch, 1);
-        sketch[i].draw( xSketch, ySketch, zSketch, 255,255,255,255,1);
+      for (int i=0; i < 200; i++) {
+        sketch[i].draw(xSketch, ySketch, zSketch, 255, 255, 255, 255);
       }
     }
   //- Particles
